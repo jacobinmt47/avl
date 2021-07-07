@@ -36,3 +36,16 @@ Node* insertnb(Node* node, int key){
     // we shouldn't reach here
     return nullptr;
 }
+Node *left_rotate(Node *x){
+    //got this stuff backwards
+    Node *oldtop = x;
+    Node *newtop = x->right;
+    Node *newRight = x->right->right;
+    newtop->left = oldtop;
+    oldtop->left = nullptr;
+    oldtop->right = nullptr;
+    oldtop->height = 1;
+    newtop->height = 0;
+    newRight->height = 1;
+    return newtop;
+}
