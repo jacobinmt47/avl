@@ -16,12 +16,11 @@ void printtree(Node *n){
     }
 }
 int main(int argc,char** argv){
-    Node *root = insertnb(NULL, 20);
+   /* Node *root = insertnb(NULL, 20);
     root = insertnb(root, 10);
     root = insertnb(root, 30);
-    cout<<"height of root" <<root->height<<endl;
     printtree(root);
-    
+    */
     // try a straight tree 10-20-30
     Node *rt2 = insertnb(NULL,10);
     rt2 = insertnb(rt2,20);
