@@ -21,6 +21,12 @@ int main(int argc,char** argv){
     root = insertnb(root, 30);
     cout<<"height of root" <<root->height<<endl;
     printtree(root);
-    //<<"balance:"<<get_balance(root)<<endl;
+    
+    // try a straight tree 10-20-30
+    Node *rt2 = insertnb(NULL,10);
+    rt2 = insertnb(rt2,20);
+    rt2 = insertnb(rt2,30);
+    cout<<"-- next tree --"<<endl;
+    printtree(rt2);
     return 0;
 }
