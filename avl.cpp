@@ -21,8 +21,6 @@ Node* insertnb(Node* node, int key){
         cout<<"enter left"<<endl;
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
-            node->left = leftNode;
-            leftNode->height = h;
         }
         else{
             insertnb(node->left,key);
@@ -68,6 +66,6 @@ int get_balance(Node *n){
 int height(Node *N)
 {
     if (N == nullptr)
-        return 0;
+        return -1;
     return N->height;
 }
