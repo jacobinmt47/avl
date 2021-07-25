@@ -15,7 +15,7 @@ Node* new_node(int key){
 Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
-    node->height = height(node);
+    node->height = height(node)+1;
     cout<<"node height:"<<node->height<<"  node key:"<<node->key<<endl;
     if(node->key>key){
         //cout<<"enter left:"<<node->height<<endl;

@@ -25,6 +25,7 @@ int main(int argc,char** argv){
     Node *rt2 = insertnb(NULL,10);
     rt2 = insertnb(rt2,20);
     rt2 = insertnb(rt2,30);
+    rt2 = insertnb(rt2,40);
     cout<<"-- next tree --"<<endl;
     printtree(rt2);
     return 0;
