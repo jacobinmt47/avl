@@ -16,19 +16,19 @@ void printtree(Node *n){
     }
 }
 int main(int argc,char** argv){
-    Node *root = insertnb(NULL, 20);
-    root = insertnb(root, 10);
-    root = insertnb(root, 30);
-    root = insertnb(root,5);
-    printtree(root);
-
     // try a straight tree 10-20-30
     Node *rt2 = insertnb(NULL,10);
     rt2 = insertnb(rt2,20);
     rt2 = insertnb(rt2,30);
-    rt2 = insertnb(rt2,40);
-    cout<<"-- next tree --"<<endl;
+    rt2 = left_rotate(rt2);
     printtree(rt2);
-    
+
+    Node *root = insertnb(NULL,30);
+    root = insertnb(root,20);
+    root = insertnb(root,5);
+    root = insertnb(root,10);
+    root = right_rotate(root);
+    cout<<"next tree"<<endl;
+    printtree(root);
     return 0;
 }

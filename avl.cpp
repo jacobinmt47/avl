@@ -41,13 +41,24 @@ Node* insertnb(Node* node, int key){
     return nullptr;
 }
 Node *left_rotate(Node *n){
-    Node *newtop = nullptr;
-    if(n == nullptr)
-        return n;
+    Node *newtop = new_node(n->right->key);
+    newtop->right = n->right->right;
+    newtop->left = n;
+    newtop->height = (n->height-1);
+    n->left = nullptr;
+    n->right = nullptr;
+    n->height = 0;
+    return newtop;
+}
 
-    newtop = n->left;
+Node *right_rotate(Node *n){
+    Node *newtop =new_node(n->left->key);
+    newtop->left = n->left->left;
     newtop->right = n;
-    height(newtop);
+    newtop->height = (n->height-1);
+    n->left = nullptr;
+    n->right = nullptr;
+    n->height = 0;
     return newtop;
 }
 
