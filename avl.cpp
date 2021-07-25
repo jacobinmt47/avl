@@ -60,11 +60,23 @@ int get_balance(Node *n){
         return 0;
     return height(n->left)-height(n->right);
 }
-int height(Node *N)
+int height(Node *n)
 {
-    if (N == nullptr)
+    if (n == nullptr)
         return -1;
-    if(N->left == nullptr && N->right == nullptr)
+    if(n->left == nullptr && n->right == nullptr)n
         return 0;
-    
+    if(n->left != nullptr && n->right != nullptr){
+        // return the greatest
+        if(n->left->height >n->right->height){
+            return (height(n->left)++);
+        }
+        else{
+            return (height(n->right)++);
+        }
+    }
+    if(n->left != nullptr && n->right == nullptr)
+        return (height(n->left)++);
+    if(n->left == nullptr && n->right != nullptr)
+        return (height(n->right)++);
 }
