@@ -15,8 +15,8 @@ Node* new_node(int key){
 Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
+    node->height = height(node);
     if(node->key>key){
-
         cout<<"enter left:"<<node->height<<endl;
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
@@ -64,19 +64,21 @@ int height(Node *n)
 {
     if (n == nullptr)
         return -1;
-    if(n->left == nullptr && n->right == nullptr)n
+    if(n->left == nullptr && n->right == nullptr)
         return 0;
     if(n->left != nullptr && n->right != nullptr){
         // return the greatest
         if(n->left->height >n->right->height){
-            return (height(n->left)++);
+            return (height(n->left)+1);
         }
         else{
-            return (height(n->right)++);
+            return (height(n->right)+1);
         }
     }
     if(n->left != nullptr && n->right == nullptr)
-        return (height(n->left)++);
+        return (height(n->left)+1);
     if(n->left == nullptr && n->right != nullptr)
-        return (height(n->right)++);
+        return (height(n->right)+1);
+
+    return 0;
 }
