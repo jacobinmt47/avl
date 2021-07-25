@@ -16,11 +16,11 @@ Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
     if(node->key>key){
-        int h = node->height;
-        h++;
-        cout<<"enter left"<<endl;
+
+        cout<<"enter left:"<<node->height<<endl;
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
+            node->left = leftNode;
         }
         else{
             insertnb(node->left,key);
@@ -28,13 +28,10 @@ Node* insertnb(Node* node, int key){
         return node;
     }
     else{
-        int h =node->height;
-        h++;
         cout<<"enter right:"<<node->height<<endl;
         if(node->right == nullptr){
             Node *rightNode = new_node(key);
             node->right = rightNode;
-             rightNode->height = h;
         }
         else{
             insertnb(node->right,key);
@@ -67,5 +64,7 @@ int height(Node *N)
 {
     if (N == nullptr)
         return -1;
-    return N->height;
+    if(N->left == nullptr && N->right == nullptr)
+        return 0;
+    
 }
