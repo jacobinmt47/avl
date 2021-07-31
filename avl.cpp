@@ -92,6 +92,10 @@ int height(Node *n)
 
     return 0;
 }
+
+/**
+ * check balance and rotate if needed
+ * */
 void do_rotate(Node **n){
     int b = get_balance((*n));
     cout<<b<<endl;
