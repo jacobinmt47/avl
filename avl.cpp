@@ -47,7 +47,7 @@ Node *left_rotate(Node *n){
     newtop->height = (n->height-1);
     n->left = nullptr;
     n->right = nullptr;
-    n->height = 0;
+    n->height = height(n);
     return newtop;
 }
 
@@ -65,7 +65,12 @@ Node *right_rotate(Node *n){
 int get_balance(Node *n){
     if(n == nullptr)
         return 0;
-    return height(n->left)-height(n->right);
+    int b = height(n->left)-height(n->right);
+    if (b>0)
+        return b;
+    if (b<=0)
+        return 0-b;
+    return b;
 }
 int height(Node *n)
 {

@@ -10,7 +10,7 @@ void printtree(Node *n){
     }
     cout<<"key: "<<n->key<<endl;
     cout<<"height: "<<n->height<<endl;
-    
+    cout<<"balance: "<<get_balance(n)<<endl;
     if(n->right != nullptr){
         printtree(n->right);
     }
