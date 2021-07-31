@@ -24,7 +24,6 @@ Node* insertnb(Node* node, int key){
         else{
             insertnb(node->left,key);
         }
-        do_rotate(&node);
         return node;
     }
     else{
@@ -35,7 +34,6 @@ Node* insertnb(Node* node, int key){
         else{
             insertnb(node->right,key);
         }
-        do_rotate(&node);
         return node;
     }
     // we shouldn't reach here
@@ -91,16 +89,4 @@ int height(Node *n)
         return height(n->right)+1;
 
     return 0;
-}
-
-/**
- * check balance and rotate if needed
- * */
-void do_rotate(Node **n){
-    int b = get_balance((*n));
-    cout<<b<<endl;
-    if(b>1)
-        (*n) = right_rotate(*n);
-    if(b<-1)
-        (*n) = left_rotate(*n);
 }

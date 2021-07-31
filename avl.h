@@ -5,6 +5,5 @@ Node *left_rotate(Node *x);
 Node *right_rotate(Node *x);
 int get_balance(Node *x);
 int height(Node *n);
-void do_rotate(Node **n);
 
 
