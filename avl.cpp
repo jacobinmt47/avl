@@ -51,11 +51,13 @@ Node *left_rotate(Node *n){
 }
 
 Node *right_rotate(Node *n){
+    cout<<"right rotate"<<endl;
     Node *newtop =new_node(n->left->key);
     newtop->left = n->left->left;
     newtop->right = n;
     newtop->height = (n->height-1);
     n->height = height(n);
+    cout<<"end of right rotate"<<endl;
     return newtop;
 }
 /**
