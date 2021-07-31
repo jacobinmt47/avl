@@ -28,7 +28,7 @@ int main(int argc,char** argv){
     root = insertnb(root,20);
     root = insertnb(root,5);
     root = insertnb(root,10);
-   // root = right_rotate(root);
+    root = right_rotate(root);
     printtree(root);
     return 0;
 }

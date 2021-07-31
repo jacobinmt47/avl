@@ -46,6 +46,8 @@ Node *left_rotate(Node *n){
     newtop->left = n;
     newtop->height = (n->height-1);
     n->height = height(n);
+    n->left = nullptr;
+    n->right = nullptr;
     cout<<"end of left rotate"<<endl;
     return newtop;
 }
@@ -57,6 +59,8 @@ Node *right_rotate(Node *n){
     newtop->right = n;
     newtop->height = (n->height-1);
     n->height = height(n);
+    n->left = nullptr;
+    n->right = nullptr;
     cout<<"end of right rotate"<<endl;
     return newtop;
 }
