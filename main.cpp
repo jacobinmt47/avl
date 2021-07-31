@@ -20,15 +20,15 @@ int main(int argc,char** argv){
     Node *rt2 = insertnb(NULL,10);
     rt2 = insertnb(rt2,20);
     rt2 = insertnb(rt2,30);
-    rt2 = left_rotate(rt2);
+  //  rt2 = left_rotate(rt2);
     printtree(rt2);
 
+    cout<<"next tree"<<endl;
     Node *root = insertnb(NULL,30);
     root = insertnb(root,20);
     root = insertnb(root,5);
     root = insertnb(root,10);
-    root = right_rotate(root);
-    cout<<"next tree"<<endl;
+   // root = right_rotate(root);
     printtree(root);
     return 0;
 }
