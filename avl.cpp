@@ -18,17 +18,18 @@ Node* insert(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
     int b = get_balance(node);
-    if(b<1)
-        left_rotate(node);
-    if(b>-1)
-        right_rotate(node);
-    insertnb(node,key);
+    cout<<"balance_insert:"<<b<<endl;
+    if(b>1)
+        node = right_rotate(node);
+    if(b<-1)
+        node = left_rotate(node);
+    return insertnb(node,key);
 }
 
 Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
-    node->height = height(node)+1;
+    node->height = height(node);
     if(node->key>key){
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
@@ -53,7 +54,10 @@ Node* insertnb(Node* node, int key){
     return nullptr;
 }
 Node *right_rotate(Node *n){
+    cout<<"right rotate"<<endl;
     Node *newtop = n->left;
+    if (n->left == nullptr)
+        cout<<"left is null ptr"<<endl;
     n->left = newtop->right;
     newtop->right = n;
     n->height = height(n);
@@ -84,21 +88,16 @@ int height(Node *n)
 {
     if (n == nullptr)
         return -1;
-    if(n->left == nullptr && n->right == nullptr)
-        return 0;
     if(n->left != nullptr && n->right != nullptr){
-        // return the greatest
-        if(n->left->height > n->right->height){
-            return height(n->left)+1;
-        }
-        else{
-            return height(n->right)+1;
-        }
-    }
+        int b = n->left->height - n->right->height;
+        if(b>0)
+            return (n->left->height+1);
+        return (n->right->height+1);               
+    }   
     if(n->left != nullptr && n->right == nullptr)
         return height(n->left)+1;
     if(n->left == nullptr && n->right != nullptr)
         return height(n->right)+1;
-
+    //if both are nullptr we will be here
     return 0;
 }
