@@ -11,6 +11,19 @@ Node* new_node(int key){
     n->height = 0;
     return n;
 }
+/**
+ * like insertnb  but balances 
+ **/
+Node* insert(Node* node, int key){
+    if(node == nullptr)
+        return new_node(key);
+    int b = get_balance(node);
+    if(b<1)
+        left_rotate(node);
+    if(b>-1)
+        right_rotate(node);
+    insertnb(node,key);
+}
 
 Node* insertnb(Node* node, int key){
     if(node == nullptr)
