@@ -60,8 +60,8 @@ Node *right_rotate(Node *n){
         cout<<"left is null ptr"<<endl;
     n->left = newtop->right;
     newtop->right = n;
-    n->height = height(n);
     newtop->height = height(newtop);
+    n->height = height(n);
     return newtop;
 }
 
@@ -90,7 +90,7 @@ int height(Node *n)
         return -1;
     if(n->left != nullptr && n->right != nullptr){
         int b = n->left->height - n->right->height;
-        if(b>0)
+        if(b=>0)
             return (n->left->height+1);
         return (n->right->height+1);               
     }   
