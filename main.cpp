@@ -20,7 +20,7 @@ int main(int argc,char** argv){
     Node *rt2 = insertnb(NULL,10);
     rt2 = insertnb(rt2,20);
     rt2 = insertnb(rt2,30);
-  //  rt2 = left_rotate(rt2);
+    rt2 = left_rotate(rt2);
     printtree(rt2);
 
     cout<<"next tree"<<endl;
