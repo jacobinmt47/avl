@@ -18,7 +18,6 @@ Node* insert(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
     int b = get_balance(node);
-    cout<<"balance_insert:"<<b<<endl;
     if(b>1)
         node = right_rotate(node);
     if(b<-1)
@@ -29,7 +28,7 @@ Node* insert(Node* node, int key){
 Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
-    node->height = height(node);
+    node->height = height(node)+1;
     if(node->key>key){
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
@@ -90,7 +89,7 @@ int height(Node *n)
         return -1;
     if(n->left != nullptr && n->right != nullptr){
         int b = n->left->height - n->right->height;
-        if(b=>0)
+        if(b>=0)
             return (n->left->height+1);
         return (n->right->height+1);               
     }   
