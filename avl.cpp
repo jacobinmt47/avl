@@ -92,6 +92,6 @@ int height(Node *n)
         return 0;
     int lh = height(n->left);
     int rh = height(n->right);
-    cout<<"max height:"<<max(lh,rh)<<"  key:"<<n->key<<endl;
+    //cout<<"max height:"<<max(lh,rh)<<"  key:"<<n->key<<endl;
     return  1+max(lh,rh);               
 }

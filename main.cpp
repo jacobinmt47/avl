@@ -2,11 +2,11 @@
 #include "avl.h"
 
 using namespace std;
-
 void printtree(Node *n) {
     cout<<"key: "<<n->key<<endl;
-    cout<<"height: "<<n->height<<endl;
-    
+    cout<<"height: "<<height(n)<<endl;
+    bool has_children = (n->left == nullptr && n->right == nullptr);
+    cout<<"has children: "<<!has_children<<endl;
     if(n->left != nullptr) {
         printtree(n->left);
     }
