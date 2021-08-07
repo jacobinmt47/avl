@@ -10,7 +10,7 @@ void printtree(Node *n) {
     }
     cout<<"key: "<<n->key<<endl;
     cout<<"height: "<<n->height<<endl;
-    cout<<"balance: "<<get_balance(n)<<endl;
+    //cout<<"balance: "<<get_balance(n)<<endl;
     if(n->right != nullptr) {
         printtree(n->right);
     }
@@ -38,6 +38,7 @@ int main(int argc,char** argv) {
     root = insert(root, 40);
     root = insert(root, 50);
     root = insert(root, 25);
+    cout<<"print tree"<<endl;
     printtree(root);
     return 0;
 }
