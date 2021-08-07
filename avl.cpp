@@ -13,7 +13,7 @@ Node* new_node(int key){
     return n;
 }
 /**
- * like insertnb  but balances 
+ * calls insertnb but balances first
  **/
 Node* insert(Node* node, int key){
     if(node == nullptr)

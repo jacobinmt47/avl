@@ -4,13 +4,13 @@
 using namespace std;
 
 void printtree(Node *n) {
-    //print inorder
+    cout<<"key: "<<n->key<<endl;
+    cout<<"height: "<<n->height<<endl;
+    
     if(n->left != nullptr) {
         printtree(n->left);
     }
-    cout<<"key: "<<n->key<<endl;
-    cout<<"height: "<<n->height<<endl;
-    //cout<<"balance: "<<get_balance(n)<<endl;
+ 
     if(n->right != nullptr) {
         printtree(n->right);
     }
@@ -38,7 +38,7 @@ int main(int argc,char** argv) {
     root = insert(root, 40);
     root = insert(root, 50);
     root = insert(root, 25);
-    root = insert(root, 27);
+    //root = insert(root, 27);
     cout<<"print tree"<<endl;
     printtree(root);
     return 0;
