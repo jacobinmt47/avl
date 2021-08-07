@@ -29,7 +29,7 @@ Node* insert(Node* node, int key){
 Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
-    node->height = height(node)+1;
+    //node->height = height(node)+1;
     if(node->key>key){
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
@@ -37,6 +37,7 @@ Node* insertnb(Node* node, int key){
         }
         else{
              insertnb(node->left,key);
+             node->height = height(node);
         }
         return node;
     }
@@ -47,6 +48,7 @@ Node* insertnb(Node* node, int key){
         }
         else{
             insertnb(node->right,key);
+            node->height = height(node);
         }
         return node;
     }
