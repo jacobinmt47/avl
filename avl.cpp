@@ -36,7 +36,7 @@ Node* insertnb(Node* node, int key){
             node->left = leftNode;
         }
         else{
-            insertnb(node->left,key);
+             insertnb(node->left,key);
         }
         return node;
     }
