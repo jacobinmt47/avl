@@ -37,8 +37,8 @@ Node* insertnb(Node* node, int key){
         }
         else{
              insertnb(node->left,key);
-             node->height = height(node);
         }
+        node->height = height(node);
         return node;
     }
     else{
@@ -48,8 +48,8 @@ Node* insertnb(Node* node, int key){
         }
         else{
             insertnb(node->right,key);
-            node->height = height(node);
         }
+        node->height = height(node);
         return node;
     }
     // we shouldn't reach here
