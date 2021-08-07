@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "avl.h"
 
 using namespace std;
@@ -71,7 +72,7 @@ Node *left_rotate(Node *n){
     Node *newtop = n->right;
     n->right = newtop->left;
     newtop->left = n;
-    newtop->height = height(newtop);
+    //newtop->height = height(newtop);
     n->height = height(n);
     cout<<"end of left rotate"<<endl;
     return newtop;
@@ -87,16 +88,9 @@ int height(Node *n)
 {
     if (n == nullptr)
         return -1;
-    if(n->left != nullptr && n->right != nullptr){
-        int b = n->left->height - n->right->height;
-        if(b>=0)
-            return (n->left->height+1);
-        return (n->right->height+1);               
-    }   
-    if(n->left != nullptr && n->right == nullptr)
-        return height(n->left)+1;
-    if(n->left == nullptr && n->right != nullptr)
-        return height(n->right)+1;
-    //if both are nullptr we will be here
-    return 0;
+    if(n->left == nullptr && n->right == nullptr)
+        return 0;
+    int lh = height(n->left);
+    int rh = height(n->right);
+    return 1 + max(lh,rh);               
 }
