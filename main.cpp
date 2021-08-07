@@ -38,6 +38,7 @@ int main(int argc,char** argv) {
     root = insert(root, 40);
     root = insert(root, 50);
     root = insert(root, 25);
+    root = insert(root, 27);
     cout<<"print tree"<<endl;
     printtree(root);
     return 0;

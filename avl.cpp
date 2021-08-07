@@ -30,7 +30,7 @@ Node* insertnb(Node* node, int key){
     if(node == nullptr)
         return new_node(key);
     node->height = height(node)+1;
-    if(node->key>=key){
+    if(node->key>key){
         if(node->left == nullptr){
             Node *leftNode = new_node(key);
             node->left = leftNode;
@@ -67,9 +67,9 @@ Node *right_rotate(Node *n){
 
 Node *left_rotate(Node *n){
     cout<<"left rotate"<<endl;
+    Node *newtop = n->right;
     if(n->right == nullptr)
         cout<<"n right is null"<<endl;
-    Node *newtop = n->right;
     n->right = newtop->left;
     newtop->left = n;
     newtop->height = height(newtop);
@@ -93,5 +93,5 @@ int height(Node *n)
     int lh = height(n->left);
     int rh = height(n->right);
     cout<<"max height:"<<max(lh,rh)<<"  key:"<<n->key<<endl;
-    return 1 + max(lh,rh);               
+    return  1+max(lh,rh);               
 }
