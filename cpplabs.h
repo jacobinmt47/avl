@@ -1,3 +1,6 @@
+#ifndef CPPLABS_H_INCLUDED
+#define CPPLABS_H_INCLUDED
+
 class Node
 {
 public:
@@ -6,3 +9,4 @@ public:
     Node *right;
     int height;
 };
+#endif // CPPLABS_H_INCLUDED
